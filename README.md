@@ -8,8 +8,8 @@ applying the recommended [mySQL tuning for Artifactory](https://www.jfrog.com/co
 This image would typically be [linked to](https://docs.docker.com/userguide/dockerlinks/) 
 from [artifactory-with-mysql](https://registry.hub.docker.com/u/soilandreyes/artifactory-with-mysql/):
 
-    sudo docker run --name mysql-for-artifactory mysql-for-artifactory
-    sudo docker run --name artifactory --link mysql-for-artifactory:mysql soilandreyes/artifactory-with-mysql
+    docker run --name mysql-for-artifactory soilandreyes/mysql-for-artifactory
+    docker run --name artifactory --link mysql-for-artifactory:mysql -p 8080:8080 soilandreyes/artifactory-with-mysql
 
 
 ## Details
